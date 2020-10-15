@@ -71,4 +71,12 @@ def test_sum_of_digits_return_an_int():
     actual = robot.sum_of_digits(10)
     assert isinstance(actual,int), "Should return an Int"
 
+def test_get_access_area():
+    actual = robot.get_access_area()
+    assert isinstance(actual,int),"Should return an Int"
+
+def test_get_access_area_return():
+    actual = robot.get_access_area()
+    assert actual == 808,"Should return an 202"
+
 
