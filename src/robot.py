@@ -12,6 +12,8 @@ class Robot:
     def get_condition(self):
         return self.condition
 
+    def 
+
 
 robot = Robot(10)
-print(robot.condition)
+print(robot.get_condition())

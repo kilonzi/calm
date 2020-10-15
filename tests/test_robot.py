@@ -15,3 +15,9 @@ def test_robot_int_proper():
     robot = Robot(10)
     print(robot.condition)
     assert int(robot.condition) == 10, "The condition should be 10"
+
+def test_robot_returns_correct_condition():
+    robot = Robot(23)
+    expected = 23
+    actual = robot.get_condition()
+    assert expected == actual, "The robot returns correct condition"
