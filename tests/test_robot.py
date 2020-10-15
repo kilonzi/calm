@@ -1,6 +1,8 @@
 
 import pytest
 from src.robot import Robot
+robot = Robot(10)
+
 
 def test_robot_init_without_condition():
     with pytest.raises(TypeError) as exc_info:
@@ -12,7 +14,6 @@ def test_robot_init_with_str_condition():
     assert "Condition should be an Integer" in str(exc_info.value)
 
 def test_robot_int_proper():
-    robot = Robot(10)
     print(robot.condition)
     assert int(robot.condition) == 10, "The condition should be 10"
 
@@ -38,8 +39,36 @@ def test_x_bound_return_one():
     assert actual == 1 , "Bound should be a One"
 
 def test_x_bound_return_correctly():
-    robot = Robot(10)
     expected = 28
     actual = robot.get_bound()
     assert actual == expected , "Bound should be a Twenty Eight"
+
+def test_split_digits_is_list():
+     actual = robot.split_digits(1234)
+     assert isinstance(actual,list), "Returned should be a list"
+
+def test_split_digits_returned():
+     actual = robot.split_digits(1234)
+     expected = [1,2,3,4]
+     assert actual == expected, "Returned should be [1,2,3,4]"
+
+def test_sum_of_digits():
+    actual = robot.sum_of_digits(1234)
+    expected = 10
+    assert actual==expected, "Should return Ten"
+
+def test_sum_of_digits_return_on_zero():
+    actual = robot.sum_of_digits(0)
+    expected = 0
+    assert actual==expected, "Should return Zero"
+
+def test_sum_of_digits_return_on_one():
+    actual = robot.sum_of_digits(10)
+    expected = 1
+    assert actual==expected, "Should return One"
+
+def test_sum_of_digits_return_an_int():
+    actual = robot.sum_of_digits(10)
+    assert isinstance(actual,int), "Should return an Int"
+
 
