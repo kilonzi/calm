@@ -3,7 +3,6 @@ import pytest
 from src.robot import Robot
 robot = Robot(10)
 
-
 def test_robot_init_without_condition():
     with pytest.raises(TypeError) as exc_info:
         robot = Robot()
@@ -77,6 +76,6 @@ def test_get_access_area():
 
 def test_get_access_area_return():
     actual = robot.get_access_area()
-    assert actual == 808,"Should return an 202"
+    assert actual == 689,"Should return an 689"
 
 
