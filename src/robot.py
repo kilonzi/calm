@@ -1,5 +1,3 @@
-import argparse
-
 class Robot:
     ''' Implement the EMP Mines on Grid avoiding Robot
     '''
@@ -92,29 +90,12 @@ class Robot:
         Returns:
             int: An integer defining the total area robot can access
         '''
-
-        grid_adjustment = 4
         x_position = self.get_bound()
-        area_count = 1
-        while x_position >0:
-            y_position = 0
-            while  self.sum_positions(x_position,y_position) < self.condition+1:
-                    y_position += 1
+        area_count = x_position
+        while x_position > 0:
+            y_position = 1
+            while  self.sum_positions(x_position,y_position) <= self.condition:
                     area_count += 1
+                    y_position += 1
             x_position -= 1
-        return (area_count*4)-grid_adjustment
-
-
-
-parser = argparse.ArgumentParser(description='Calculate the area that a Robot avoid EMP Mines would go to')
-
-parser.add_argument('--c','-c', metavar='condition', type=int, nargs='+',
-                   help='an integer to show the condition or danger zone for the Robot',required=True)
-args = parser.parse_args()
-condition = args.c[0]
-
-robot = Robot(condition)
-print("#"*condition*2)
-print("The area that can be travelled by the Robot, given the condition of {} is ......".format(condition))
-print(robot.get_access_area())
-print("#"*condition*2)
+        return (area_count*4)+1

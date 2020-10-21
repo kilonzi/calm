@@ -69,4 +69,4 @@ all the 16 tests should pass
 with Requirements already installed: -
 in your terminal, run the command below  adding the condition as required
 
-    python src/robot.py -c 23
+    python src/run.py -c 23
