@@ -76,6 +76,6 @@ def test_get_access_area():
 
 def test_get_access_area_return():
     actual = robot.get_access_area()
-    assert actual == 689,"Should return an 689"
+    assert actual == 1121,"Should return an 1121"
 
 
