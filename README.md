@@ -10,7 +10,7 @@ There is a robot which can move around on a grid. The robot is placed at point (
 3. For each navigation, increment the counter for the access area
 4. Given that a grid is just 4 quadrants, then multiply the counter by four.
 
-![Robot movements of Q1](https://user-images.githubusercontent.com/9586665/96115237-4d319600-0eef-11eb-8304-84f70e23da0b.png =550x250)
+![Robot movements of Q1](https://user-images.githubusercontent.com/9586665/96921656-8782d080-14b7-11eb-99fe-9a583ce6598c.png)
 
 ## Source Code and Repository
 
