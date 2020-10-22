@@ -90,12 +90,13 @@ class Robot:
         Returns:
             int: An integer defining the total area robot can access
         '''
-        x_position = self.get_bound()
-        area_count = x_position
-        while x_position > 0:
-            y_position = 1
-            while  self.sum_positions(x_position,y_position) <= self.condition:
-                    area_count += 1
-                    y_position += 1
-            x_position -= 1
-        return (area_count*4)+1
+        y = self.get_bound()
+        x = 0
+        k = self.get_bound()
+        area = 0
+        for y in range(self.get_bound()+1):
+            for x in range(k,-1,-1):
+                if self.sum_positions(x,y)<=self.condition:
+                    area += 1
+            k -= 1
+        return ((area-(y+1))*4)+1
